@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq5h3e1ipy2wn"]
+
+[ext_resource type="Script" path="res://Scripts/scene_magner.gd" id="1_m6xet"]
+
+[node name="sceneMagner" type="Node2D"]
+script = ExtResource("1_m6xet")

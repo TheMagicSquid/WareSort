@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://igwl2srmwlrt"
+path="res://.godot/imported/Recording (6).mp3-719f53f998e19266f48b700f33972c04.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/Recording (6).mp3"
+dest_files=["res://.godot/imported/Recording (6).mp3-719f53f998e19266f48b700f33972c04.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

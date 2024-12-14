@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://birqhei48e6as"
+path="res://.godot/imported/Woosh-Mark_DiAngelo-4778593.mp3-440f2acfe7451349d8b156cd206d781d.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/Woosh-Mark_DiAngelo-4778593.mp3"
+dest_files=["res://.godot/imported/Woosh-Mark_DiAngelo-4778593.mp3-440f2acfe7451349d8b156cd206d781d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

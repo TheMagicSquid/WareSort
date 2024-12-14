@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwtliufagsthb"]
+
+[ext_resource type="Script" path="res://Scripts/box.gd" id="1_px885"]
+[ext_resource type="Texture2D" uid="uid://ub8ylxy2v16t" path="res://Icons/Tree.svg" id="2_rdiid"]
+[ext_resource type="AudioStream" uid="uid://3ak2uxhqsupw" path="res://Sound Effects/Drop 1.mp3" id="3_7fxbq"]
+[ext_resource type="AudioStream" uid="uid://drs0nb564sxrj" path="res://Sound Effects/Drop 2.mp3" id="5_3840i"]
+[ext_resource type="AudioStream" uid="uid://cnno8cm418q3q" path="res://Sound Effects/Drop 3.mp3" id="6_1maob"]
+[ext_resource type="AudioStream" uid="uid://cbsoxtmaxkpm8" path="res://Sound Effects/Hit 1.mp3" id="7_1r800"]
+[ext_resource type="AudioStream" uid="uid://cugsj20tomwh0" path="res://Sound Effects/Hit 2.mp3" id="8_sjcyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0kxc"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjvsb"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlf0v"]
+size = Vector2(54, 54)
+
+[node name="box" type="Node2D"]
+script = ExtResource("1_px885")
+
+[node name="MouseCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseCollider"]
+shape = SubResource("RectangleShape2D_v0kxc")
+
+[node name="BodyCollider" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyCollider"]
+shape = SubResource("RectangleShape2D_xjvsb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_xlf0v")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rdiid")
+
+[node name="Sound1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7fxbq")
+
+[node name="Sound3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3840i")
+
+[node name="Sound4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1maob")
+
+[node name="Hit1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1r800")
+
+[node name="Hit2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_sjcyc")
+
+[connection signal="mouse_entered" from="MouseCollider" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="MouseCollider" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="BodyCollider" to="." method="_on_body_collider_body_entered"]
+[connection signal="body_exited" from="BodyCollider" to="." method="_on_body_collider_body_exited"]
